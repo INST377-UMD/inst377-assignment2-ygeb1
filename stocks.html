@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="stocks.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div id="page">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="stocks.html">Stocks</a>
+            <a href="dogs.html">Dogs</a>
+        </nav>
+        <div>
+            <div id="stock-form">
+                <form onsubmit="return showStock()">
+                    <label>Enter Stock Ticker:</label>
+                    <input maxlength="5" id="ticker-input"><br>
+                    <label>Range:</label>
+                    <select id="date-range" >
+                        <option>30 days</option>
+                        <option>60 days</option>
+                        <option>90 days</option>
+                    </select>   <br>
+                    <input class="button-20"type="submit" value="Submit"></input>
+                </form>
+            </div>
+
+
+            <div id="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div id="stock-table-container">
+                <table id="stock-table">
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Comments</th>
+                        <th>Sentiment</th>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        
+        <div id="audio">
+            <h2>You can use voice commands to navigate this page!</h2>
+            <p>Make sure you turn on your microphone to use this feature.</p>
+            <br>
+            <p>Here are the commands you can do!</p>
+            <ul>
+                <li>
+                    Navigate to a different page:
+                    <ul>
+                        <li>Say "Navigate to stocks"</li>
+                    </ul>
+                </li>
+                <li>
+                    Change the background color:
+                    <ul>
+                        <li>Say "Change color to green"</li>
+                    </ul>
+                </li>
+                <li>
+                    Say hello to the page!:
+                    <ul>
+                        <li>Say "Hello"</li>
+                    </ul>
+                </li>
+                <li>
+                    Look up a stock!:
+                    <ul>
+                        <li>Say "Look up M S F T"</li>
+                    </ul>
+                </li>
+            </ul>
+            <div id="voice-buttons">
+                <button class = "voice-on-off" onclick="{annyang.resume()}">Turn on voice control</button>
+                <button class = "voice-on-off" onclick="{annyang.abort()}">Turn off voice control</button>
+            </div>
+            
+        </div>
+    </div>
+
+    
+</body>
+</html>
